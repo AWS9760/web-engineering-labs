@@ -1,0 +1,51 @@
+body {
+    background: #e8e8e8;
+    font-family: Georgia, serif;
+}
+
+h1 {
+    color: navy;
+    font-size: 2rem;
+}
+
+p {
+    color: #333;
+    font-size: 1.125rem;
+    line-height: 1.6
+}
+
+.box {
+    width: 280px;
+    padding: 40px;
+    border: 8px solid navy;
+    margin: 40px;
+    background: #e3f2fd;
+}
+
+.note {
+    color: teal;
+    font-weight: bold;
+}
+
+#alert {
+    background: #fff3cd;
+    padding:8px:
+}
+
+input[type="email"] {
+    border: 2px solid teal;
+    padding: 8px;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+
+li:nth-child(odd) {
+    background: #e3f2fd;
+}
+
+li:nth-child(even) {
+    background: #fff3e0;
+}
