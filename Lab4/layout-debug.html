@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Layout Debug</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #eeeeee;
+        }
+
+        h1 {
+            margin-bottom: 40px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        /* PROBLEM 1
+           Flex items overflow because flex-wrap is missing*/
+
+        .broken-flex {
+            display: flex;
+
+            /* BROKEN:
+               flex-wrap is missing.
+               All cards are forced into one row. */
+
+            gap: 20px;
+        }
+
+        .broken-flex .item {
+            min-width: 250px;
+            height: 150px;
+            background: #999;
+
+            flex: 1;
+        }
+
+
+        /* FIX 1
+           Allow flex items to move onto another line*/
+
+        .fixed-flex {
+            display: flex;
+
+            /*
+               FIX:
+               flex-wrap allows the items to move onto
+               another row instead of overflowing.
+            */
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+        }
+
+        .fixed-flex .item {
+            flex: 1 1 250px;
+            min-width: 250px;
+            height: 150px;
+            background: #777;
+        }
+
+
+        /* PROBLEM 2
+           Absolute badge without positioned parent*/
+
+        .broken-card {
+            width: 300px;
+            height: 200px;
+
+            background: #bbbbbb;
+
+            margin-top: 20px;
+
+            /* BROKEN:
+               No position: relative here.
+               The absolute badge searches for another
+               positioned ancestor. */
+
+        }
+
+        .broken-badge {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            padding: 10px;
+
+            background: #555;
+            color: white;
+        }
+
+
+        /* FIX 2
+           Make the card the positioning reference*/
+
+        .fixed-card {
+            width: 300px;
+            height: 200px;
+
+            background: #888;
+
+            margin-top: 20px;
+
+            /*
+               FIX:
+               position: relative makes this card
+               the containing block for the absolute badge.
+            */
+
+            position: relative;
+        }
+
+        .fixed-badge {
+            position: absolute;
+
+            top: 10px;
+            right: 10px;
+
+            padding: 10px;
+
+            background: #333;
+            color: white;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Layout Debug — Broken → Fixed</h1>
+
+
+    <!-- FLEXBOX-->
+
+    <section>
+
+        <h2>1. Flex Items Overflow</h2>
+
+        <h3>Broken</h3>
+
+        <div class="broken-flex">
+
+            <div class="item">Box 1</div>
+            <div class="item">Box 2</div>
+            <div class="item">Box 3</div>
+            <div class="item">Box 4</div>
+
+        </div>
+
+
+        <h3>Fixed</h3>
+
+        <div class="fixed-flex">
+
+            <div class="item">Box 1</div>
+            <div class="item">Box 2</div>
+            <div class="item">Box 3</div>
+            <div class="item">Box 4</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABSOLUTE POSITION-->
+
+    <section>
+
+        <h2>2. Absolute Badge</h2>
+
+        <h3>Broken</h3>
+
+        <div class="broken-card">
+
+            <div class="broken-badge">
+                BADGE
+            </div>
+
+        </div>
+
+
+        <h3>Fixed</h3>
+
+        <div class="fixed-card">
+
+            <div class="fixed-badge">
+                BADGE
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

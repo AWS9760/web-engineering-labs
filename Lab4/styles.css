@@ -1,18 +1,319 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: system-ui, sans-serif;
-    padding: 1rem;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
 }
 
-.gallery {
+.page {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* ================= HEADER ================= */
+
+.header {
+    height: 72px;
+    padding: 0 5%;
+    background: #d0d0d0;
+
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
 }
 
-.photo {
-    background: #ddd;
-    padding: 2rem 1rem;
-    text-align: center;
-    flex: 0 0 120px;
+.logo {
+    width: 90px;
+    height: 35px;
+    background: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    justify-content: center;
+}
+
+.nav-item {
+    width: 80px;
+    height: 20px;
+    background: #aaa;
+}
+
+.header-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.small-box {
+    width: 40px;
+    height: 35px;
+    background: #aaa;
+}
+
+.button-box {
+    width: 85px;
+    height: 35px;
+    background: #999;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 80px 8%;
+    background: #eeeeee;
+    min-height: 500px;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    width: 80%;
+    height: 75px;
+    background: #aaa;
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    width: 90%;
+    height: 90px;
+    background: #c5c5c5;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-button {
+    width: 130px;
+    height: 45px;
+    background: #999;
+}
+
+.hero-image {
+    min-height: 340px;
+    background: #b5b5b5;
+    border-radius: 10px;
+}
+
+/* ================= FEATURE STRIP ================= */
+
+.feature-strip {
+    display: flex;
+    gap: 20px;
+    padding: 40px 8%;
+}
+
+.feature-box {
+    flex: 1;
+    height: 90px;
+    background: #d0d0d0;
+}
+
+/* ================= CONTENT ================= */
+
+.content-section {
+    padding: 70px 8%;
+}
+
+.section-heading {
+    width: 300px;
+    height: 50px;
+    background: #aaa;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: flex;
+    gap: 25px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    background: #eeeeee;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card-image {
+    height: 180px;
+    background: #b5b5b5;
+}
+
+.card-title {
+    width: 70%;
+    height: 30px;
+    background: #aaa;
+}
+
+.card-text {
+    width: 100%;
+    height: 65px;
+    background: #c7c7c7;
+}
+
+.card-button {
+    width: 100px;
+    height: 35px;
+    background: #999;
+}
+
+/* ================= LARGE FEATURE ================= */
+
+.large-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+    padding: 80px 8%;
+    background: #e5e5e5;
+}
+
+.large-feature-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.large-text {
+    width: 90%;
+    height: 100px;
+    background: #c0c0c0;
+    margin-bottom: 25px;
+}
+
+.large-feature-image {
+    min-height: 350px;
+    background: #aeaeae;
+    border-radius: 10px;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+    margin: 70px 8%;
+    padding: 70px;
+
+    background: #c8c8c8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.cta-title {
+    width: 300px;
+    height: 45px;
+    background: #999;
+}
+
+.cta-text {
+    width: 500px;
+    max-width: 100%;
+    height: 60px;
+    background: #b0b0b0;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    padding: 60px 8%;
+    background: #d0d0d0;
+}
+
+.footer-logo {
+    width: 120px;
+    height: 40px;
+    background: #999;
+    margin-bottom: 40px;
+}
+
+.footer-columns {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-column div {
+    width: 100px;
+    height: 18px;
+    background: #aaa;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 15px;
+    }
+
+    .nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .nav-item {
+        width: 50px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 40px 5%;
+    }
+
+    .feature-strip {
+        flex-direction: column;
+        padding: 30px 5%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .large-feature {
+        grid-template-columns: 1fr;
+        padding: 50px 5%;
+    }
+
+    .cta {
+        margin: 40px 5%;
+        padding: 40px 20px;
+    }
+
+    .footer-columns {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
 }
