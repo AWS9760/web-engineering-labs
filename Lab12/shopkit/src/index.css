@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.logo {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.nav a {
+  color: #374151;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #2563eb;
+}
+
+/* Main */
+.main {
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+/* Hero */
+.hero {
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  background: #eff6ff;
+  text-align: center;
+}
+
+.hero-title {
+  margin: 0 0 0.75rem;
+  font-size: 2.25rem;
+}
+
+.hero-text {
+  margin: 0 auto 1rem;
+  max-width: 36rem;
+  color: #4b5563;
+}
+
+.hero-note {
+  font-weight: 600;
+  color: #b91c1c;
+}
+
+.hero-btn {
+  padding: 0.7rem 1.6rem;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background: #1d4ed8;
+}
+
+.hero-small {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* Featured products grid */
+.featured {
+  margin-top: 2.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Badge + Button (small reusable pieces) */
+.badge {
+  align-self: flex-start;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.btn {
+  margin-top: auto;
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: #111827;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #374151;
+}
+
+/* Footer */
+.site-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e5e7eb;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
